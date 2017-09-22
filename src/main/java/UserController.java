@@ -1,6 +1,7 @@
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import javax.jws.WebParam;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,10 +9,13 @@ import static spark.Spark.*;
 
 public class UserController {
     public UserController(final UserService userService) {
-        //staticFiles.location("/public");
         port(9999);
 
-        get("/", (req, res) -> renderPage());
+        get("/", (req, res) -> {
+            HashMap model = new HashMap();
+            model.put("template", "templates/index.vtl");
+            return new ModelAndView(model, "templates/layout.vtl");
+        }, new VelocityTemplateEngine());
 
         get("/users", (req, res) -> userService.getAllUsers(), JsonUtil.json());
 
@@ -32,12 +36,12 @@ public class UserController {
     }
     // more routes
 
-    private static String renderPage(){
+    /*private static String renderPage(){
         Map<String, Object> model = new HashMap<>();
-        return renderTemplate("velocity/index.vm", model);
+        return renderTemplate("templates/index.vtl", model);
     }
 
     private static String renderTemplate(String template, Map model) {
         return new VelocityTemplateEngine().render(new ModelAndView(model, template));
-    }
+    }*/
 }
