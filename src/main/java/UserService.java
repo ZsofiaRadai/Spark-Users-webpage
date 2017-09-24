@@ -7,7 +7,7 @@ public class UserService {
     }
 
     // returns a single user by id
-    public User getUser(int id) {
+    public  User getUser(int id) {
         List<User> allUsers = getAllUsers();
         for (User u: allUsers) {
             if (u.getId() == id){

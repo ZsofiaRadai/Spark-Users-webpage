@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Users to web - Spark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div id="data">
+        <div>id: $userData.getId()</div>
+        <div>name : $userData.getName()</div>
+        <div>e-mail: $userData.getEmail()</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Users to web - Spark</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div>
+    <a id="users">Click on user to see their data</a>
+    <span>
+        #foreach($user in $allUsers)
+        <p><a href="/users/$user.getId()">$user.getName()</a></p>
+        #end
+    </span>
+</div>
+
+</body>
+</html>
+

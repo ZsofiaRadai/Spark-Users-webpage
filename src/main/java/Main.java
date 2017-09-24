@@ -11,6 +11,6 @@ public class Main {
             System.out.println(u.getName());
             System.out.println(u.getId());
         }*/
-        new UserController(newUserService);
+        new UserController();
     }
 }
